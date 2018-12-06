@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../resources/logo.svg';
 import '../styles/App.css';
 import BikeList from './BikeList'
+import BikeSeed from '../resources/seedbikes.json'
 
 class App extends Component {
   constructor() {
@@ -11,6 +12,11 @@ class App extends Component {
       data: 'The an ok prop...!'
     }
   }
+
+  componentDidMount() {
+    this.setState({bikeData: BikeSeed})
+  }
+
   render() {
     return (
       <div className="App">
