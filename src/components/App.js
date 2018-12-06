@@ -34,7 +34,7 @@ class App extends Component {
           >
             Learn React
           </a>
-          <BikeList/>
+          <BikeList bikeInfo={this.state.bikeData}/>
         </header>
       </div>
     );
