@@ -6,7 +6,7 @@ class BikeList extends Component {
         const bikeItems = this.props.bikeInfo.map( (station) => (
             <Bike
                 key={station.id}
-                name={station.name}
+                name={station.stationName}
                 bikes={station.availableBikes}
                 totalDocks={station.totalDocks}
                 availableDocks={station.availableDocks}
