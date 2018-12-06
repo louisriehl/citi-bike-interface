@@ -3,10 +3,10 @@ import React, {Component} from 'react'
 class Bike extends Component {
     render() {
         return(
-            <ul>
-                <li>Station Name: {this.props.name}</li>
-                <li>Percent Bikes Available: {((this.props.bikes / this.props.totalDocks) * 100).toFixed(2)}%</li>
-            </ul>
+            <div className='station'>
+                <p>Station Name: {this.props.name}</p>
+                <p>Percent Bikes Available: {((this.props.bikes / this.props.totalDocks) * 100).toFixed(2)}%</p>
+            </div>
         )
     }
 }
