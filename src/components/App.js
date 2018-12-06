@@ -9,12 +9,9 @@ class App extends Component {
     super()
     this.state = {
       msg: 'Hello World!',
-      data: 'The an ok prop...!'
+      data: 'The an ok prop...!',
+      bikeData: BikeSeed
     }
-  }
-
-  componentDidMount() {
-    this.setState({bikeData: BikeSeed})
   }
 
   render() {
