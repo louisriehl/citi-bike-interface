@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import logo from '../resources/logo.svg';
 import '../styles/App.css';
+import BikeList from './BikeList'
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      msg: 'Hello World!',
+      data: 'The an ok prop...!'
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -10,6 +18,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
+            This app says {this.state.msg}
           </p>
           <a
             className="App-link"
