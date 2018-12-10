@@ -22,7 +22,7 @@ class Bike extends Component {
         }
         return(
             <div className='station' onMouseEnter={this.mouseEntered} onMouseLeave={this.mouseLeft}>
-                <p>Station Name: {this.props.name}</p>
+                <p><strong>{this.props.name}</strong></p>
                 <p>Percent Bikes Available: {((this.props.bikes / this.props.totalDocks) * 100).toFixed(2)}%</p>
                 {extraInfo}
             </div>

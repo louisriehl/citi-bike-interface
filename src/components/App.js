@@ -10,7 +10,6 @@ class App extends Component {
     super()
     this.state = {
       msg: 'Fetching bike station data...',
-      data: 'The an ok prop...!',
       bikeData: []
     }
   }
@@ -21,12 +20,13 @@ class App extends Component {
     // This obviously is a bit of a patchjob fix, and it would be better to
     axios.get('https://cors-anywhere.herokuapp.com/https://feeds.citibikenyc.com/stations/stations.json', {crossdomain: true})
     .then( response => {
-      this.setState({bikeData: response.data.stationBeanList.filter( station => ((
+      this.setState({bikeData: response.data.stationBeanList.filter( station => (
         station.statusValue === 'In Service' && station.testStation !== true
-      )))})
+      )), msg: 'All done!'})
     })
     .catch( error => {
       console.log(error)
+      this.setState({msg: 'Something went wrong!'})
     })
   }
 
