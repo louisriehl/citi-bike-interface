@@ -17,7 +17,6 @@ class BikeList extends Component {
         ))
         return (
             <div className="stations">
-                <h5>If you can read this, that means BikeList loaded correctly!</h5>
                 {bikeItems}
             </div>
         )
