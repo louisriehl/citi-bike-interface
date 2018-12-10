@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../styles/App.css';
 import '../styles/Bike.css'
 import BikeList from './BikeList'
-import BikeSeed from '../resources/seedbikes.json'
 
 const axios = require('axios')
 
@@ -12,7 +11,7 @@ class App extends Component {
     this.state = {
       msg: 'Hello World!',
       data: 'The an ok prop...!',
-      bikeData: BikeSeed
+      bikeData: []
     }
   }
 
@@ -22,7 +21,7 @@ class App extends Component {
     // This obviously is a bit of a patchjob fix, and it would be better to
     axios.get('https://cors-anywhere.herokuapp.com/https://feeds.citibikenyc.com/stations/stations.json', {crossdomain: true})
     .then( response => {
-      console.log(response.data.stationBeanList)
+      this.setState({bikeData: response.data.stationBeanList})
     })
     .catch( error => {
       console.log(error)
