@@ -1,0 +1,15 @@
+.stations {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.station {
+    background-color: white;
+    border: 3px black solid;
+    border-radius: 2rem;
+    color: black;
+    margin: 1rem;
+    padding: 1rem;
+}
