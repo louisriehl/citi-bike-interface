@@ -18,9 +18,11 @@ class App extends Component {
 
   componentDidMount () {
     console.log('Component mounted!')
-    axios.get('https://feeds.citibikenyc.com/stations/stations.json', {crossdomain: true})
+    // For some indiscernable reason, citibikenyc doesn't have cross-origin requests enabled, so we route through cors-anywhere
+    // This obviously is a bit of a patchjob fix, and it would be better to
+    axios.get('https://cors-anywhere.herokuapp.com/https://feeds.citibikenyc.com/stations/stations.json', {crossdomain: true})
     .then( response => {
-      console.log(response)
+      console.log(response.data.stationBeanList)
     })
     .catch( error => {
       console.log(error)
